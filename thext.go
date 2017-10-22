@@ -101,9 +101,7 @@ func main() {
 		// test output
 		response := true
 		if test.Response != "" {
-			if !strings.Contains(output, test.Response) {
-				response = false
-			}
+			response = strings.Contains(output, test.Response)
 		}
 
 		// timer
@@ -113,14 +111,18 @@ func main() {
 		if success == test.Success && response {
 			color.Set(color.FgGreen)
 			fmt.Print("[PASS] ")
+			color.Unset()
+			fmt.Printf("(%d) %s %s\n", total, test.Command, test.RulePath)
 			passes++
 		} else {
 			color.Set(color.FgRed)
 			fmt.Print("[FAIL] ")
+			color.Unset()
+			fmt.Printf("(%d) %s %s\n", total, test.Command, test.RulePath)
+			fmt.Printf("  CMD: %s\n", cmd)
+			fmt.Printf("  OUT: %s\n", output)
 			failes++
 		}
-		color.Unset()
-		fmt.Printf(" (%d) %s %s\n", total, test.Command, test.RulePath)
 
 	}
 
