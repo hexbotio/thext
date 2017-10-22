@@ -1,8 +1,10 @@
 {
   "hex_path": "/home/matt/go/bin/hex",
-  "plugins_dir": "/home/matt/hex/plugins",
+  "plugins_dir": "/etc/hex/plugins",
   "tests": [
-    { "command": "ping", "response": "pong" },
-    { "command": "help" }
+    { "command": "ping", "contains": "pong", "success": true },
+    { "command": "ping --debug", "contains": "MESSAGE DEBUG", "success": true },
+    { "command": "help", "contains": "help <filter>", "success": true },
+    { "command": "help ping", "contains": "ping", "not_contains": "help <filter>", "success": true }
   ]
 }

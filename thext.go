@@ -100,8 +100,11 @@ func main() {
 
 		// test output
 		response := true
-		if test.Response != "" {
-			response = strings.Contains(output, test.Response)
+		if test.Contains != "" {
+			response = strings.Contains(output, test.Contains)
+		}
+		if test.NotContains != "" {
+			response = !strings.Contains(output, test.NotContains)
 		}
 
 		// timer
@@ -149,9 +152,10 @@ type TestConfig struct {
 }
 
 type Test struct {
-	Command  string            `json:"command"`
-	RulePath string            `json:"rule_path"`
-	Success  bool              `json:"success"`
-	Response string            `json:"response"`
-	Env      map[string]string `json:"env"`
+	Command     string            `json:"command"`
+	RulePath    string            `json:"rule_path"`
+	Contains    string            `json:"contains"`
+	NotContains string            `json:"not_contains"`
+	Success     bool              `json:"success"`
+	Env         map[string]string `json:"env"`
 }
