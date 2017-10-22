@@ -1,0 +1,8 @@
+{
+  "hex_path": "/home/matt/go/bin/hex",
+  "plugins_dir": "/home/matt/hex/plugins",
+  "tests": [
+    { "command": "ping", "response": "pong" },
+    { "command": "help" }
+  ]
+}
