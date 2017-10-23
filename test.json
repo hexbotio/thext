@@ -9,6 +9,7 @@
     { "command": "rules", "contains": "Rules:", "success": true, "args": "-admins $USER" },
     { "command": "response XYZ", "contains": "XYZ", "success": true, "rule_path": "./tests/hex-response-basic.json" },
     { "command": "response XYZ ABC", "contains": "XYZ", "success": true, "rule_path": "./tests/hex-response-basic.json" },
+    { "command": "response env", "contains": "MNO", "success": true, "rule_path": "./tests/hex-response-env.json", "env": { "TEST_ENV": "MNO" } },
     { "command": "validate 0", "contains": "Success", "success": true, "rule_path": "./tests/hex-validate-bool.json" },
     { "command": "validate 1", "contains": "Success", "success": true, "rule_path": "./tests/hex-validate-bool.json" },
     { "command": "validate T", "contains": "Success", "success": true, "rule_path": "./tests/hex-validate-bool.json" },

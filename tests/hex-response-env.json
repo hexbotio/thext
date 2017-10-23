@@ -1,0 +1,7 @@
+{
+  "rule": "Response Test",
+  "match": "response env",
+  "actions": [
+    { "type": "hex-response", "command": "${TEST_ENV}" }
+  ]
+}
