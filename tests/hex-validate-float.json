@@ -1,0 +1,15 @@
+{
+  "rule": "Validation Test",
+  "match": "validate*",
+  "actions": [
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "config": {
+        "type": "float",
+        "success": "Success",
+        "failure": "Failure"
+      }
+    }
+  ]
+}

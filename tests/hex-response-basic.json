@@ -1,0 +1,7 @@
+{
+  "rule": "Response Test",
+  "match": "response*",
+  "actions": [
+    { "type": "hex-response", "command": "${hex.input.1}" }
+  ]
+}

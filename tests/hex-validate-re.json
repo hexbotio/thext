@@ -1,0 +1,17 @@
+{
+  "rule": "Validation Test",
+  "match": "validate*",
+  "actions": [
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "run_on_fail": true,
+      "config": {
+        "type": "string",
+        "match_re": "/co(f+)ee/",
+        "success": "Success",
+        "failure": "Failure"
+      }
+    }
+  ]
+}

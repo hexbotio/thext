@@ -69,14 +69,20 @@ func main() {
 
 		// construct the command and env
 		cmd := testConfig.HexPath + " -quiet"
+		if testConfig.PluginsDir != "" {
+			cmd = cmd + " -plugins-dir \"" + testConfig.PluginsDir + "\""
+		}
 		if test.RulePath != "" {
-			cmd = cmd + " -rule-path \"" + test.RulePath + "\""
+			cmd = cmd + " -rules-dir \"" + test.RulePath + "\""
 		}
 		cmd = cmd + " -command \"" + test.Command + "\""
+		if test.Args != "" {
+			cmd = cmd + " " + test.Args
+		}
 		c := exec.Command("/bin/sh", "-c", cmd)
 		if len(test.Env) > 0 {
 			for key, value := range test.Env {
-				c.Env[len(c.Env)] = key + "=" + value
+				c.Env = append(c.Env, key+"="+value)
 			}
 		}
 
@@ -158,4 +164,5 @@ type Test struct {
 	NotContains string            `json:"not_contains"`
 	Success     bool              `json:"success"`
 	Env         map[string]string `json:"env"`
+	Args        string            `json:"args"`
 }

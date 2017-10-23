@@ -1,0 +1,16 @@
+{
+  "rule": "Validation Test",
+  "match": "validate*",
+  "actions": [
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "config": {
+        "type": "string",
+        "match_list": "develop,master,release",
+        "success": "Success",
+        "failure": "Failure"
+      }
+    }
+  ]
+}
