@@ -1,0 +1,7 @@
+{
+  "rule": "Local Test",
+  "match": "local pwd",
+  "actions": [
+    { "type": "hex-local", "command": "pwd", "config": { "dir": "/usr/local" } }
+  ]
+}

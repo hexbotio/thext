@@ -1,0 +1,7 @@
+{
+  "rule": "Response Test",
+  "match": "response hide_output",
+  "actions": [
+    { "type": "hex-response", "command": "ABCXYZ", "hide_output": true }
+  ]
+}

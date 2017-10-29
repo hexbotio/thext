@@ -1,0 +1,8 @@
+{
+  "rule": "Local Test",
+  "match": "local last_config1",
+  "actions": [
+    { "type": "hex-local", "command": "echo test", "config": { "env": "MY_VAR1=abc;MY_VAR2=xyz" } },
+    { "type": "hex-local", "command": "echo $MY_VAR1 $MY_VAR2", "last_config": true }
+  ]
+}
