@@ -1,0 +1,7 @@
+{
+  "rule": "Local Test",
+  "match": "local action output_fail_only",
+  "actions": [
+    { "type": "hex-local", "command": "echo 'hello'; Xwd", "output_fail_only": true }
+  ]
+}
