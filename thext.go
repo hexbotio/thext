@@ -42,6 +42,9 @@ func main() {
 	}
 
 	// validate hex path
+	if os.Getenv("THEXT_HEX_PATH") != "" {
+		testConfig.HexPath = os.Getenv("THEXT_HEX_PATH")
+	}
 	if _, err := os.Stat(testConfig.HexPath); err != nil {
 		if os.IsNotExist(err) {
 			log.Fatal("ERROR: hex path does not exist ", err)
@@ -49,6 +52,9 @@ func main() {
 	}
 
 	// validate plugins dir
+	if os.Getenv("THEXT_PLUGINS_DIR") != "" {
+		testConfig.PluginsDir = os.Getenv("THEXT_PLUGINS_DIR")
+	}
 	if _, err := os.Stat(testConfig.PluginsDir); err != nil {
 		if os.IsNotExist(err) {
 			log.Fatal("ERROR: plugins dir does not exist ", testConfig.PluginsDir, " ", err)
