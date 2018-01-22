@@ -1,0 +1,8 @@
+{
+  "rule": "Local Test",
+  "match": "local hide fail",
+  "actions": [
+    { "type": "hex-local", "command": "echo 'hello'; Xwd", "output_fail_only": true },
+    { "type": "hex-local", "command": "echo 'ABCXYZ'; Xwd", "hide_output": true, "output_fail_only": true }
+  ]
+}

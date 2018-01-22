@@ -45,6 +45,7 @@
     { "command": "local run_on_fail2", "not_contains": "ABCXYZ", "success": false, "rule_path": "./tests/hex-local-run_on_fail2.json" },
     { "command": "local rule output_fail_only", "contains": "hello", "success": false, "rule_path": "./tests/hex-local-rule-output_fail_only.json" },
     { "command": "local action output_fail_only", "contains": "hello", "success": false, "rule_path": "./tests/hex-local-action-output_fail_only.json" },
+    { "command": "local hide fail", "contains": "hello", "not_contains": "ABCXYZ", "success": false, "rule_path": "./tests/hex-local-hide_fail.json" },
     { "command": "local output_to_var", "contains": "ABCXYZ", "success": true, "rule_path": "./tests/hex-local-output_to_var.json" },
     { "command": "response acl yes", "contains": "acl", "success": true, "rule_path": "./tests/hex-response-basic.json", "args": "-acl \"*\"" },
     { "command": "response acl multi", "contains": "acl", "success": true, "rule_path": "./tests/hex-response-basic.json", "args": "-acl \"zzzz,xyz,*\"" },
