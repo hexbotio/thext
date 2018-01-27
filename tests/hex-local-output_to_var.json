@@ -1,6 +1,7 @@
 {
   "rule": "Local Test",
   "match": "local output_to_var",
+  "group_output": true,
   "actions": [
     { "type": "hex-local", "command": "echo ABCXYZ", "output_to_var": true },
     { "type": "hex-response", "command": "${hex.output.0.response}" }
