@@ -1,7 +1,9 @@
 {
   "rule": "Response Test",
   "match": "response hide_output",
+  "group_output": true,
   "actions": [
-    { "type": "hex-response", "command": "ABCXYZ", "hide_output": true }
+    { "type": "hex-response", "command": "ABCXYZ", "hide_output": true },
+    { "type": "hex-response", "command": "MNO" }
   ]
 }
